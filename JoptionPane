@@ -1,0 +1,28 @@
+package SEM01;
+
+import javax.swing.JOptionPane;
+
+public class JoptionPane {
+    public static void main(String[] args) {
+        // Mostrar un diálogo con un mensaje y dos opciones de botón
+        int opcionSeleccionada = JOptionPane.showOptionDialog(
+                null, // Componente padre (null indica que no tiene componente padre)
+                "¿Desea guardar los cambios?", // Mensaje a mostrar
+                "Confirmación", // Título del diálogo
+                JOptionPane.YES_NO_OPTION, // Tipo de opciones de botón a mostrar
+                JOptionPane.QUESTION_MESSAGE, // Tipo de icono a mostrar
+                null, // Array de opciones personalizadas de botón (null indica opciones predeterminadas)
+                null, // Opción predeterminada (null indica la primera opción)
+                null // Icono personalizado (null indica icono predeterminado)
+        );
+        
+        // Mostrar un mensaje dependiendo de la opción seleccionada
+        if (opcionSeleccionada == JOptionPane.YES_OPTION) {
+            JOptionPane.showMessageDialog(null, "Los cambios han sido guardados.");
+        } else if (opcionSeleccionada == JOptionPane.NO_OPTION) {
+            JOptionPane.showMessageDialog(null, "Los cambios no han sido guardados.");
+        } else if (opcionSeleccionada == JOptionPane.CLOSED_OPTION) {
+            JOptionPane.showMessageDialog(null, "El diálogo ha sido cerrado sin seleccionar ninguna opción.");
+        }
+    }
+}
